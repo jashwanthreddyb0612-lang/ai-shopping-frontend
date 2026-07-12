@@ -1,12 +1,11 @@
 import axios from "axios";
 const API=import.meta.env.VITE_API_URL;
 export const addToCart=async({productID,quantity=1})=>{
-    console.log(productID);
 	const token=localStorage.getItem("token");
 	return await axios.post(
-    `${API}/carts/addtocart`,
+    `${API}/carts/addtocart/${productID}`,
     {
-        productID,
+
         quantity
     },
 
