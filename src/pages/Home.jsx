@@ -6,7 +6,7 @@ function Home(){
 	const fetchProducts=async()=>{
 		try{
 			const response=await getAllProducts();
-			setProducts(response.data.products);
+			setProducts(response.data.data);
 			console.log(response.data);
 		}catch(error){
 			console.log(error.response?.data||error.message);
