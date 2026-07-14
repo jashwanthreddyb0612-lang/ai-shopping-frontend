@@ -20,7 +20,7 @@ function Navbar(){
     			<Link className="nav-link" to="/dashboard">AdminDashboard</Link>
     			<Link className="nav-link" to="/admin/allproducts">ManageProducts</Link>
     			<Link className="nav-link" to="/addproduct">AddProduct</Link>
-    			<Link className="nav-link" to="/manageuser">ManageUser</Link>
+    			<Link className="nav-link" to="/manageusers">ManageUser</Link>
     			{
     			
     				token?(
