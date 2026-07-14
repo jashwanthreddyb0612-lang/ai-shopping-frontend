@@ -1,14 +1,15 @@
 import {useState,useEffect} from "react";
 import {getAllProducts } from "../services/productService";
 import ProductCard from "../components/ProductCard";
-import {Navigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 function Home(){
 	const[products,setProducts]=useState([]);
 	const fetchProducts=async()=>{
 		try{
+			const navigate=useNavigate();
 			const user=JSON.parse(localStorage.getItem("user"));
 			if(!user){
-				return <Navigate to="/login" replace />;
+				return <navigate to="/login" replace />;
 			}
 			const response=await getAllProducts();
 			setProducts(response.data.data);
