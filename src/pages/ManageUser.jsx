@@ -68,6 +68,7 @@ function ManageUser(){
            	</thead>
            	<tbody>
    	{
+   		Array.isArray(users)&&
    		users.map((user)=>(
            		<tr key={user.id}>
            			<td>{user.id}</td>
