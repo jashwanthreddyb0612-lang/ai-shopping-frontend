@@ -51,6 +51,7 @@ function ManageUser(){
 	if(loading){
 		return <h2 className="d-flex text-align-center">loading...</h2>
 	}
+	console.log(users);
 
 	return(
    <div className="container">
