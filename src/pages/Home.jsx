@@ -4,12 +4,14 @@ import ProductCard from "../components/ProductCard";
 import {useNavigate } from "react-router-dom";
 function Home(){
 	const[products,setProducts]=useState([]);
+	const navigate=useNavigate();
 	const fetchProducts=async()=>{
 		try{
-			const navigate=useNavigate();
+			
 			const user=JSON.parse(localStorage.getItem("user"));
 			if(!user){
-				return <navigate to="/login" replace />;
+				navigate("/login",{replace=true});
+				return;
 			}
 			const response=await getAllProducts();
 			setProducts(response.data.data);
