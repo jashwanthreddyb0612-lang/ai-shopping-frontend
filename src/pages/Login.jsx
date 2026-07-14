@@ -20,8 +20,12 @@ const {setToken}=useContext(AuthContext);
             );
 
     
-localStorage.setItem("user", JSON.stringify(response.data.data));
+const userData = response.data.data || response.data.user || response.data;
 
+localStorage.setItem(
+    "user",
+    JSON.stringify(userData)
+);
           setToken(response.data.token);
           navigate("/");
 

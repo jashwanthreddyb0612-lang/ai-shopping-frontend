@@ -8,11 +8,16 @@ function Home(){
 	const fetchProducts=async()=>{
 		try{
 			
-			const user=JSON.parse(localStorage.getItem("user"));
-			if(!user){
-				navigate("/login",{replace:true});
-				return;
-			}
+			
+			const userData = localStorage.getItem("user");
+
+            if (!userData || userData === "undefined") {
+                navigate("/login", { replace: true });
+                return;
+            }
+
+            const user = JSON.parse(userData);
+			
 			const response=await getAllProducts();
 			setProducts(response.data.data);
 			console.log(response.data);
