@@ -18,6 +18,8 @@ const {setToken}=useContext(AuthContext);
              "token",
              response.data.token
             );
+        
+localStorage.setItem("user", JSON.stringify(response.data.user));
           setToken(response.data.token);
           navigate("/");
 
