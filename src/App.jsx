@@ -13,6 +13,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminProduct from "./pages/AdminProduct";
 import EditProduct from "./pages/EditProduct";
 import AddProduct from "./pages/AddProduct";
+import ManageUser from "./pages/ManageUser";
 
 function App(){
   return(
@@ -32,6 +33,7 @@ function App(){
       <Route path="/admin/allproducts" element={<AdminProduct />} />
       <Route path="/admin/product/edit/:productID" element={<EditProduct />} />
       <Route path="/addproduct" element={<AddProduct />} />
+      <Route path="/manageusers" element={<ManageUser />} />
     </Routes>
 
   </>
