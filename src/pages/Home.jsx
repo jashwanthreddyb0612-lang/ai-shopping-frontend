@@ -5,6 +5,10 @@ function Home(){
 	const[products,setProducts]=useState([]);
 	const fetchProducts=async()=>{
 		try{
+			const user=JSON.parse(localStorage.getItem("user"));
+			if(!user){
+				return <Navigate to="/login" replace />;
+			}
 			const response=await getAllProducts();
 			setProducts(response.data.data);
 			console.log(response.data);
