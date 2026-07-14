@@ -10,7 +10,7 @@ function Home(){
 			
 			const user=JSON.parse(localStorage.getItem("user"));
 			if(!user){
-				navigate("/login",{replace=true});
+				navigate("/login",{replace:true});
 				return;
 			}
 			const response=await getAllProducts();
