@@ -8,7 +8,7 @@ function ManageUser(){
 		try{
 			setLoading(true);
 			const response=await getAllusers();
-			setUsers(response.data);
+			setUsers(response.data.data);
 		}catch(error){
 			console.log(error.message);
 		}finally{
